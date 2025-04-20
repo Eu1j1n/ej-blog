@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getPosts } from "./lib/notion";
 
 export default async function Home() {
@@ -7,9 +8,25 @@ export default async function Home() {
   return (
     <>
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">EJ Blog</h1>
-          <p className="text-gray-600">나만의 기술 블로그</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">EJ Blog</h1>
+            <p className="text-gray-600">나만의 기술 블로그</p>
+          </div>
+          <a
+            href="https://github.com/Eu1j1n"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4"
+          >
+            <Image
+              src="/github.jpeg"
+              alt="GitHub Profile"
+              width={50}
+              height={50}
+              className="rounded-full border border-gray-300 "
+            />
+          </a>
         </div>
       </header>
       <main className="flex-grow bg-white">
