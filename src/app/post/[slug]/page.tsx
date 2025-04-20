@@ -62,22 +62,24 @@ export default async function Page({ params }: { params: PostParams }) {
               <ReactMarkdown
                 components={{
                   h1: ({ children }) => (
-                    <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-8 mb-4 text-gray-900">
                       {children}
                     </h1>
                   ),
                   h2: ({ children }) => (
-                    <h2 className="text-2xl font-bold mt-6 mb-4 text-gray-900">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mt-6 mb-4 text-gray-900">
                       {children}
                     </h2>
                   ),
                   h3: ({ children }) => (
-                    <h3 className="text-xl font-bold mt-4 mb-2 text-gray-900">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mt-4 mb-2 text-gray-900">
                       {children}
                     </h3>
                   ),
                   p: ({ children }) => (
-                    <p className="my-4 leading-7 text-gray-900">{children}</p>
+                    <p className="text-base sm:text-lg lg:text-xl my-4 leading-7 text-gray-900">
+                      {children}
+                    </p>
                   ),
                   hr: () => <hr className="my-8 border-gray-200" />,
                   strong: ({ children }) => (
