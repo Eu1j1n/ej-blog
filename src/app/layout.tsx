@@ -9,12 +9,13 @@ export const metadata: Metadata = {
   authors: [{ name: "김의진", url: "https://github.com/dmlwls7094" }],
   openGraph: {
     title: "EJ Blog | 나만의 기술 블로그",
-    description: "개발자 김의진의 기술 블로그입니다.",
+    description: "프론트엔드 개발자 김의진의 기술 블로그입니다.",
     type: "website",
+    url: "https://ej-blog.vercel.app",
     locale: "ko_KR",
     images: [
       {
-        url: "https://ej-blog.vercel.app//kimeuijin.jpg",
+        url: "https://ej-blog.vercel.app/kimeuijin.jpg",
         width: 1200,
         height: 630,
         alt: "EJ Blog 대표 이미지",
