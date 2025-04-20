@@ -1,44 +1,28 @@
+import { getPostBySlug, getAllPostSlugs } from "../../lib/notion";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { getPostBySlug } from "../../lib/notion";
-import { Metadata } from "next";
 
-interface PostPageProps {
-  params: {
-    slug: string;
-  };
+type PostParams = {
+  slug: string;
+};
+
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs();
+  return slugs.map((slug) => ({
+    slug,
+  }));
 }
 
-export async function generateMetadata({
-  params,
-}: PostPageProps): Promise<Metadata> {
+export default async function Page({ params }: { params: PostParams }) {
   const post = await getPostBySlug(params.slug);
-
   if (!post) {
-    return {
-      title: "Post Not Found",
-    };
-  }
-
-  return {
-    title: `${post.title} | EJ Blog`,
-    description: post.description,
-  };
-}
-
-// 비동기적으로 포스트 데이터를 가져와서 처리
-export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostBySlug(params.slug); // await으로 데이터를 처리
-
-  if (!post) {
-    notFound(); // 포스트가 없다면 404 페이지로 리디렉션
+    notFound();
   }
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white rounded-lg overflow-hidden p-8">
-        {/* ← 목록 버튼 */}
         <div className="mb-8">
           <Link
             href="/"
@@ -48,7 +32,6 @@ export default async function PostPage({ params }: PostPageProps) {
           </Link>
         </div>
 
-        {/* 본문 */}
         <article>
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
