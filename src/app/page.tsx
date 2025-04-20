@@ -16,7 +16,9 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="space-y-8">
             <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-gray-900">최근 포스트</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                최근 포스트
+              </h2>
               <div className="relative">
                 <input
                   type="text"
