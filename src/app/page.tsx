@@ -12,7 +12,7 @@ export default async function Home() {
           <p className="text-gray-600">나만의 기술 블로그</p>
         </div>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="space-y-8">
             <div className="flex justify-between items-center">
