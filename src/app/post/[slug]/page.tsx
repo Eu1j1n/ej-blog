@@ -81,6 +81,17 @@ export default async function Page({ params }: { params: PostParams }) {
                       {children}
                     </p>
                   ),
+                  li: ({ children }) => (
+                    <li className="ml-6 list-disc text-base sm:text-lg lg:text-xl leading-7 mb-2">
+                      {children}
+                    </li>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="list-disc ml-4 my-4">{children}</ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="list-decimal ml-4 my-4">{children}</ol>
+                  ),
                   hr: () => <hr className="my-8 border-gray-200" />,
                   strong: ({ children }) => (
                     <strong className="font-bold text-gray-900">
